@@ -2,7 +2,7 @@ import React from 'react';
 
 import './index.less';
 import {connect} from 'react-redux';
-import actions from "src/store/actions/home";
+import actions from "../../../src/store/actions/home";
 import HomeSwiper from './HomeSwiper'
 import {loadMore,pullRefresh} from '../../common/util'
 import Loading from '../../components/Loading/Loading';

@@ -3,7 +3,9 @@ let app = express();
 let bodyParser = require('body-parser');
 let session = require('express-session');
 // 8000 -> 3000 跨域
-app.listen(3000);
+app.listen(3000,function () {
+    return '监听成功'
+});
 app.use(session({
     resave:true,
     secret:'zfpx',// 签名 看一下发过来的是否合法
