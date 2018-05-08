@@ -17,28 +17,10 @@ app.get('/slider', function (req, res) {
     res.json(sliders);
 });
 // http://localhost:3000/list?offset=5&limit=10&type=0
-let lessons = require('./lessons');
-let len = lessons.length;
-app.get('/list', function (req, res) {
-    let { offset, limit, type } = req.query;
-    offset = parseInt(offset);
-    limit = parseInt(limit);
-    type = parseInt(type);
-    let hasMore = true;
-    let lists = lessons.filter(lesson => {
-        if(type === 0){
-            return true;
-        }
-        return lesson.type ===(type===1?'react':'vue');
-    });
-    if (offset + limit >= lists.length) {
-        hasMore = false;
-    }
-    lists = lists.slice(offset, offset + limit);
-    setTimeout(()=>{
-        return res.json({ lists, hasMore });
-    },500)
-});
+
+
+
+
 let userList = [];
 // 登录成功后 {error:0,msg:'登录成功了',user:'xxxx'}
 // 登录失败后 {error:1,msg:'用户密码不正确',user:null}
